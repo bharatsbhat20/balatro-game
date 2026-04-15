@@ -192,7 +192,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   finishScoring: () => {
-    const { roundScore, blind, hand, selectedIndices, deck, handsLeft, handSize, ante, jokers, money } = get();
+    const { roundScore, blind, hand, selectedIndices, deck, handsLeft, handSize, jokers, money } = get();
 
     if (blind && roundScore >= blind.chips) {
       // Won the round - go to shop
