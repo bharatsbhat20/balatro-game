@@ -1,0 +1,80 @@
+:root {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #12122a;
+  --bg-card: #1a1a3e;
+  --bg-panel: #16163a;
+  --bg-hover: #22224e;
+
+  --text-primary: #e8e8ff;
+  --text-secondary: #9898cc;
+  --text-muted: #6868aa;
+
+  --accent-blue: #4488ff;
+  --accent-purple: #8844ff;
+  --accent-gold: #ffcc44;
+  --accent-green: #44cc88;
+  --accent-red: #e8403a;
+  --accent-orange: #ff8844;
+
+  --glow-blue: 0 0 20px rgba(68, 136, 255, 0.4);
+  --glow-purple: 0 0 20px rgba(136, 68, 255, 0.4);
+  --glow-gold: 0 0 20px rgba(255, 204, 68, 0.4);
+  --glow-green: 0 0 20px rgba(68, 204, 136, 0.4);
+  --glow-red: 0 0 20px rgba(232, 64, 58, 0.4);
+
+  --card-width: clamp(55px, 10vw, 90px);
+  --card-height: calc(var(--card-width) * 1.45);
+  --card-radius: 8px;
+
+  --font-game: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-game);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Scanline overlay */
+#root::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 3px;
+}
